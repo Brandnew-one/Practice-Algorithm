@@ -24,6 +24,7 @@ func inputGraphMatrix(_ vertex: Int, _ edges: [[Int]]) {
 
 // 인접리스트를 통한 무방향성 그래프 구현
 // 공간복잡도 O(V + E)
+// Swift의 Array는 Dynamic 특성 때문에 append 하는 과정이 굉장히 비효율적.
 func inputGraphList(_ vertex: Int, _ edges: [[Int]]) {
   var adjList = [[Int]](repeating: [], count: vertex)
   for edge in edges {
@@ -39,6 +40,70 @@ func inputGraphList(_ vertex: Int, _ edges: [[Int]]) {
 
 inputGraphMatrix(5, [[3, 1], [2, 3], [4, 1], [5, 2], [5, 4], [3, 5], [2, 4]])
 inputGraphList(5, [[3, 1], [2, 3], [4, 1], [5, 2], [5, 4], [3, 5], [2, 4]])
+
+struct Queue<T> {
+  private var inbox: [T] = []
+  private var outbox: [T] = []
+
+  var isEmpty: Bool {
+    return inbox.isEmpty && outbox.isEmpty
+  }
+
+  var front: T? {
+    outbox.isEmpty ? inbox.first : outbox.last
+  }
+
+  mutating func push(_ input: T) {
+    inbox.append(input)
+  }
+
+  @discardableResult
+  mutating func pop() -> T? {
+    if outbox.isEmpty {
+      outbox = inbox.reversed()
+      inbox.removeAll()
+    }
+    return outbox.popLast()
+  }
+}
+
+// bfs
+var adjList = [[Int]](repeating: [], count: 5)
+var adjMatrix = [[Int]](repeating: Array(repeating: 0, count: 5), count: 5)
+var vis = [Bool](repeating: false, count: 5)
+
+func bfsArray() {
+  var q: Queue<Int> = Queue()
+  q.push(1)
+  vis[1] = true
+  while(!q.isEmpty) {
+    let cur = q.front!
+    q.pop()
+    for v in adjMatrix[cur] {
+      if v == 0 { continue }
+      let next = v
+      if vis[next] { continue }
+      q.push(next)
+      vis[next] = true
+    }
+  }
+}
+
+func bfsList() {
+  var q: Queue<Int> = Queue()
+  q.push(1)
+  vis[1] = true
+  while(!q.isEmpty) {
+    let cur = q.front!
+    q.pop()
+    for v in adjList[cur] {
+      let next = v
+      if vis[next] { continue }
+      q.push(next)
+      vis[next] = true
+    }
+  }
+}
 
 // 플로이드 알고리즘
 func ployd(_ vertex: Int, _ edges: [[Int]]) {
