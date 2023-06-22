@@ -12,7 +12,7 @@
 
 ### 연결 리스트의 종류
 
-![Untitled](0x04%20%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%80%E1%85%A7%E1%86%AF%E1%84%85%E1%85%B5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%2007e88ac7354142f3bc3e636656d5a834/Untitled.png)
+<img width="650" alt="Untitled" src="https://github.com/Brandnew-one/Practice-Algorithm/assets/88618825/4908f085-8fdb-40b9-aa3b-3be3c0f26ef4">
 
 3번째 원소의 위치에 어떤 값을 추가하거나 삭제하는 경우를 생각해보자.
 
@@ -38,7 +38,7 @@ file(pre, pre + MX, -1);
 file(next, next + MX, -1);
 ```
 
-![Untitled](0x04%20%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%80%E1%85%A7%E1%86%AF%E1%84%85%E1%85%B5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%2007e88ac7354142f3bc3e636656d5a834/Untitled%201.png)
+<img width="916" alt="Untitled 1" src="https://github.com/Brandnew-one/Practice-Algorithm/assets/88618825/175821bc-1b72-46ee-9a7a-bc7e8095e441">
 
 그림을 통해서도 이해할 수 있지만 0번 인덱스를 dummny node로 사용, next값이 -1이 나올때 까지 순회하는 방식으로 구현한다. 위의 형식을 기반으로 insert, erase는 Swift로 정리할 때 한번 구현해보자
 
