@@ -7,4 +7,23 @@
 
 import Foundation
 
-https://firebasestorage.googleapis.com:443/v0/b/voicerecorder-7fa55.appspot.com/o/testAudio.mp3?alt=media&token=6e64aacd-7b5f-457f-8ca3-6859cc6891d9
+var answer = 0
+var dArr = Array(repeating: 0, count: 10)
+let nArr = readLine()!.map { String($0) }
+
+for n in nArr {
+  dArr[Int(n)!] += 1
+}
+
+dArr[6] = dArr[6] + dArr[9]
+if dArr[6] % 2 == 0 {
+    dArr[6] = dArr[6] / 2
+} else {
+    dArr[6] = dArr[6] / 2 + 1
+}
+
+for d in dArr {
+    if d >= answer { answer = d }
+}
+
+print(answer / 2)

@@ -36,14 +36,15 @@ func solution(_ land: [[Int]]) -> Int{
     
     for i in 1..<land.count {
         for j in 0..<4 {
-            var list: [Int] = []
+            var list: [Int] = [Int](repeating: 102 , count: 4)
             for k in 0..<4 {
                 if k == j { continue }
-                list.append(d[i - 1][k])
+                list[k] = d[i - 1][k]
             }
             d[i][j] = land[i][j] + list.max()!
         }
     }
+
 
     return d[land.count - 1].max()!
 }
