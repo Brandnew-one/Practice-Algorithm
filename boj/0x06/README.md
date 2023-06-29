@@ -1,7 +1,5 @@
 # 0x06 큐
 
-![Untitled](0x06%20%E1%84%8F%E1%85%B2%2052bac830ab8a4099b593a42c5f1c25f0/Untitled.png)
-
 - 원소의 추가, 제거 O(1)
 - 제일 앞/뒤의 원소 확인이 O(1)
 - 제일 앞/뒤가 아닌 원소들의 확인/변경이 원칙적으로 불가능
@@ -12,7 +10,7 @@
 
 ### 배열을 이용한 구현
 
-![Untitled](0x06%20%E1%84%8F%E1%85%B2%2052bac830ab8a4099b593a42c5f1c25f0/Untitled%201.png)
+<img width="1294" alt="Untitled 1" src="https://github.com/Brandnew-one/Practice-Algorithm/assets/88618825/718d81bc-8fb6-4d3a-9c30-4ba5d0bbdc14">
 
 - head: 가장 앞에 있는 원소의 인덱스
 - tail: 가장 뒤에 있는 원소의 인덱스 + 1
@@ -90,7 +88,7 @@ print(q.back()) // 2
 
 ### 스택2개를 이용하는 방법
 
-![Untitled](0x06%20%E1%84%8F%E1%85%B2%2052bac830ab8a4099b593a42c5f1c25f0/Untitled%202.png)
+<img width="929" alt="Untitled 2" src="https://github.com/Brandnew-one/Practice-Algorithm/assets/88618825/c559c4c1-4a75-4fa6-8f39-9f3be63a457c">
 
 자료구조 수업시간에 한번쯤은 들어봤을 그 방법을 한번 사용해보도록 하자
 
