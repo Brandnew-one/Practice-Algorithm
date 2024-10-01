@@ -1,6 +1,6 @@
 import Foundation
 
-// MARK: - 기타줄
+// MARK: - 기타줄1
 var input = readLine()!.split(separator: " ").map { Int(String($0))! }
 var n = input[0]
 let m = input[1]
